@@ -12,3 +12,11 @@ HDFS
 Why HDFS is Fault-tolarent?
 It replicates data based on replicate factor - making # copies of data in other blocks
 ![image](https://user-images.githubusercontent.com/32372822/141704726-788432fa-846d-41c3-a5fd-453c6d73cf3a.png)
+
+NameNode: Namespace image and Edit log are together used to maintain file history and where the data of file actually locates in the Datanode
+User interacts with NameNode to get information of Datanode, then user get/write data directly to DataNode (to lower traffic of NameNode)
+
+Note: NameNode is Single-Point-Failure. If NameNode fails, user cannot know where to find the actual data if FS. 
+So we can 1. make backup copy (update multi NameNode in-parallel) 2. Use a lower NameNode - secondary node  3. StandyNameNode.
+
+DataNode: Stores actual data in FS. 
