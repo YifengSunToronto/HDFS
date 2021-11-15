@@ -30,4 +30,7 @@ User buffers and contacts NameNode -> NameNode returns user list of DataNodes fo
 ![image](https://user-images.githubusercontent.com/32372822/141719315-32e4b83f-a127-48c2-ad80-ff7df35c1259.png)
 
 
+Read:
+User starts Read call to a NameNode -> NameNode returns DataNodes' addresses -> (If user is ran on a DataNode, then local copy of data will be used) -> User connects to nearst DataNode to stream data from the 1st block until the end block. (Seamless process / continuous streaming and the network call is handled by Hadoop - Hadoop does things for users!) 
+If error/corruption happends, will try to read from another DataNode that has the copy of data. 
 
