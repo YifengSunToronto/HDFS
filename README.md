@@ -35,3 +35,14 @@ Read:
 User starts Read call to a NameNode -> NameNode returns DataNodes' addresses -> (If user is ran on a DataNode, then local copy of data will be used) -> User connects to nearst DataNode to stream data from the 1st block until the end block. (Seamless process / continuous streaming and the network call is handled by Hadoop - Hadoop does things for users!) 
 If error/corruption happends, will try to read from another DataNode that has the copy of data. 
 
+-----------------------------------------------------
+
+Non-Functional
+
+High-Availability:
+Avoid Single-Point-Failure
+Pssible SPF is NameNode as it's the early interface for both Write and Read.
+So we need > 1 NameNode to handle all the associated requests. For the Idle NameNodes, they are the Standby NameNodes.
+Standby NameNodes do not immediately take all actions as they are the active NaameNodes.
+Alls actions taken by active NN is tracked by multiple JournalNodes. Active NN writes to JournalNode and there can only be 1 active NameNode does that at one time.
+When failure happens, StandBy NameNodes copies actions that tracked by JournalNodes, then StandbyNN starts to work.
