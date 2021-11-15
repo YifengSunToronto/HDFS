@@ -24,6 +24,10 @@ DataNode: Stores actual data in FS.
 -----------------------------------------------------
 
 User Interaction with HDFS - Write / Read
+
 Write:
+User buffers and contacts NameNode -> NameNode returns user list of DataNodes for user to write to make up the file -> Data written to the 1st DataNode -> Data transferred to other Nodes.
 ![image](https://user-images.githubusercontent.com/32372822/141719315-32e4b83f-a127-48c2-ad80-ff7df35c1259.png)
+
+
 
