@@ -10,5 +10,5 @@ HDFS
 
 
 Why HDFS is Fault-tolarent?
-
+It replicates data based on replicate factor - making # copies of data in other blocks
 ![image](https://user-images.githubusercontent.com/32372822/141704726-788432fa-846d-41c3-a5fd-453c6d73cf3a.png)
