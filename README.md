@@ -20,3 +20,10 @@ Note: NameNode is Single-Point-Failure. If NameNode fails, user cannot know wher
 So we can 1. make backup copy (update multi NameNode in-parallel) 2. Use a lower NameNode - secondary node  3. StandyNameNode.
 
 DataNode: Stores actual data in FS. 
+
+-----------------------------------------------------
+
+User Interaction with HDFS - Write / Read
+Write:
+![image](https://user-images.githubusercontent.com/32372822/141719315-32e4b83f-a127-48c2-ad80-ff7df35c1259.png)
+
